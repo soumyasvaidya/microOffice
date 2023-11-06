@@ -1,0 +1,67 @@
+# MicroOffice to integrate singleton into abstract factory pattern
+
+This software is designed to test the graphical user interfaces (GUIs) of four generations of MicroOffice Word Processing Applications: Word90, Word00, Word10, and Word21. These applications have different GUI components (Panel, Button, and Textbox) that may look different in each generation. To automate the testing process and determine which tests to run, we use a configuration file (text file) that specifies which generations of Word to test.
+
+
+## Compilation and Run Application
+    Step 1->Go to src folder
+    Step 2->Compile the Java Source Code: javac *.java
+    Step 3->Run the application: java WordGenerationApp
+
+## Sample Output
+
+   Panel Word90
+   Textbox Word90
+   Button Word90
+
+   Panel Word00
+   Textbox Word00
+   Button Word00
+
+   Panel Word90
+   Textbox Word90
+   Button Word90
+
+   Panel Word21
+   Textbox Word21
+   Button Word21
+
+   Panel Word10
+   Textbox Word10
+   Button Word10
+
+   Panel Word00
+   Textbox Word00
+   Button Word00
+
+   Panel Word21
+   Textbox Word21
+   Button Word21
+
+   Limit exceeded for word90
+
+   Limit exceeded for word00
+
+
+   Process finished with exit code 0
+
+
+## Source Code File Descriptions
+
+This section provides an overview of the key source code files.
+
+### Main/Entry Point Class
+
+- `WordGenerationApp.java`: This is the main class of the application, serving as the entry point.
+
+### Classes:
+- 'SingletonAndFactoryProducer': evaluates singleton and is producer for factory objects
+- 'AbstractWordFactory': This is an abstract class that serves as the foundation for creating Word Processing Application GUI components such as panels, textboxes, and buttons for different generations of Word applications
+-'Word90Factory', 'Word00Factory', 'Word10Factory', 'Word21Factory': These classes are a concrete implementation of the AbstractWordFactory
+- 'AbstractButton' ,'AbstractPanel', 'AbstractTextbox': These class are an abstract class that defines the blueprint for creating word components(button, panel, textbox ) within the Word Processing Application GUI. It serves as a foundation for implementing concrete component classes for different Word generations (e.g., Word90, Word00, Word10, Word21).
+
+### Test Data Files
+
+- `generation.txt`: includes list of generations for testing the application
+
+
